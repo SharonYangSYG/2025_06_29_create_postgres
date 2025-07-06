@@ -29,3 +29,32 @@ VALUES ('呂育君','歷史'
 ```sql
 INSERT INTO student (name, major)
 VALUES ('小柱','生物'), ('信忠','英語');
+INSERT INTO student (name, major)
+VALUES ('小柱','生物'),('信忠','英語');
+
+##取得資料
+```sql
+SELECT
+ select_list 
+ FROM
+ table_name;
+
+ INSERT INTO student (name, major)
+VALUES ('小柱','生物'),('信忠','英語');
+
+SELECT name, major
+FROM  student;
+
+SELECT *
+FROM  student
+where name='信忠';
+
+
+SELECT *
+FROM  student
+order by student_id DESC;
+
+SELECT *
+FROM  student
+order by student_id desc
+limit 3;
