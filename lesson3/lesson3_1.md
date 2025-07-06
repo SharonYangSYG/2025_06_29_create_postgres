@@ -9,3 +9,23 @@ CREATE TABLE [IF NOT EXISTS] table_name (
 );
 
 ```
+##建立一個student的資料表
+
+```sql
+CREATE TABLE IF NOT EXISTS student(
+    student_id SERIAL PRIMARY KEY,
+    name VARCHARD(20) NOT NULL,
+    major VARCHARD(20) UNIQUE
+);
+```sql
+## 新增一筆資料
+```sql
+INSERT INTO student (name, major)
+VALUES ('呂育君','歷史'
+);
+
+##新增多筆資料
+
+```sql
+INSERT INTO student (name, major)
+VALUES ('小柱','生物'), ('信忠','英語');
