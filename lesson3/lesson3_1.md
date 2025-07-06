@@ -24,7 +24,8 @@ INSERT INTO student (name, major)
 VALUES ('呂育君','歷史'
 );
 
-##新增多筆資料
+##新增多筆資料 TEST
+
 
 ```sql
 INSERT INTO student (name, major)
