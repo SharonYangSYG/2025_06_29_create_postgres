@@ -59,3 +59,14 @@ SELECT *
 FROM  student
 order by student_id desc
 limit 3;
+
+UPDATE student
+SET name = '阿柱',
+    major = '數學'
+WHERE student_id = 2;
+
+DELETE FROM student
+WHERE student_id = 2;
+
+DELETE FROM student
+WHERE student_id in (1, 3, 4);
