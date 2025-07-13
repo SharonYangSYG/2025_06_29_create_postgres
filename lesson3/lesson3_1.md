@@ -1,4 +1,4 @@
-###建立資料表的語法
+## 建立資料表的語法
 
 ```sql
 CREATE TABLE [IF NOT EXISTS] table_name (
@@ -7,59 +7,75 @@ CREATE TABLE [IF NOT EXISTS] table_name (
    ...
    table_constraints
 );
-
 ```
-##建立一個student的資料表
+
+## 建立一個student的資料表
 
 ```sql
 CREATE TABLE IF NOT EXISTS student(
     student_id SERIAL PRIMARY KEY,
-    name VARCHARD(20) NOT NULL,
-    major VARCHARD(20) UNIQUE
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20)
 );
+```
+
+## 刪除資料表
+
 ```sql
-## 新增一筆資料
+DROP TABLE IF EXISTS student;
+```
+
+## 新增1筆資料
+
 ```sql
 INSERT INTO student (name, major)
-VALUES ('呂育君','歷史'
-);
+VALUES ('呂育君','歷史');
+```
 
-##新增多筆資料 TEST
-
+## 新增多筆資料
 
 ```sql
-INSERT INTO student (name, major)
-VALUES ('小柱','生物'), ('信忠','英語');
 INSERT INTO student (name, major)
 VALUES ('小柱','生物'),('信忠','英語');
+```
 
-##取得資料
+## 取得資料
+
 ```sql
 SELECT
- select_list 
- FROM
- table_name;
+  select_list
+FROM
+  table_name
+WHERE
+  condition
+ORDER BY
+  sort_expression;
 
- INSERT INTO student (name, major)
-VALUES ('小柱','生物'),('信忠','英語');
+```
 
-SELECT name, major
+```sql
+SELECT student_id, name, major
 FROM  student;
 
-SELECT *
+SELECT  name, major
+FROM  student;
+
+SELECT  *
 FROM  student
-where name='信忠';
+WHERE name='信忠';
 
-
-SELECT *
+SELECT  *
 FROM  student
-order by student_id DESC;
+ORDER BY student_id DESC;
 
-SELECT *
+SELECT  *
 FROM  student
-order by student_id desc
-limit 3;
+ORDER BY student_id DESC
+LIMIT 3;
+```
 
+
+```sql
 UPDATE student
 SET name = '阿柱',
     major = '數學'
@@ -70,3 +86,4 @@ WHERE student_id = 2;
 
 DELETE FROM student
 WHERE student_id in (1, 3, 4);
+```
