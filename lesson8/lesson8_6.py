@@ -5,7 +5,7 @@
 台鐵資料查詢系統 - 主程式
 這是一個簡單的命令列介面程式，用於查詢台鐵車站資訊和進出站人數
 """
-#在終端機執行(base) root@bf9a9dc2efdd:/home/2025_06_29_create_postgres# python lesson8_6.py
+#在lesson8上點在整合式終端機開啓,寫上執行(base) root@bf9a9dc2efdd:/home/2025_06_29_create_postgres# python lesson8_6.py
 import psycopg2
 import sys
 
