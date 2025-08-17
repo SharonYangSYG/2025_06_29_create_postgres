@@ -19,3 +19,4 @@ python-dotenv
 #建.gitignore
 ##忽略不用上傳
 ##.env
+
