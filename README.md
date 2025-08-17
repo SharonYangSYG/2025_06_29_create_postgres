@@ -19,3 +19,8 @@ python-dotenv
 #建.gitignore
 ##忽略不用上傳
 .env
+
+host=dpg-d2bvmoadbo4c73b86q30-a.singapore-postgres.render.com
+database=chilee_sunday
+user=chilee_sunday_user
+password=LiUXF48xva6yz65yBWg208tsFvPxLMji
