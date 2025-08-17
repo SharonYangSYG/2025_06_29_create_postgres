@@ -4,11 +4,15 @@ st.sidebar.title("台鐵車站資訊")
 st.sidebar.header("2023年各站進出人數")
 st.subheader("進出站人數顯示區")
 
-@st.cache_resource
+@st.cache_data
 def get_stations_names():
     """取得車站資料"""
     return source.get_stations_names()
 
+@st.cache_data
+def get_date_range():
+    """取得日期範圍"""
+    return source.get_min_and_max_date()
 stations = get_stations_names()
 if stations is None:
     st.error("無法取得車站資料，請稍後再試。")
@@ -32,5 +36,11 @@ if choice == "其他":
     )
 else:
     station = choice
+get_date_range = get_date_range()
+if get_date_range is None:
+    st.error("無法取得日期範圍，請稍後再試。")
+    st.stop()
 
 st.write("您選擇的車站:", station)
+st.write("日期範圍:", get_date_range[0], "至", get_date_range[1])
+
