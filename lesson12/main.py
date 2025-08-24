@@ -72,5 +72,10 @@ if data is None:
     st.error("無法取得車站資料，請稍後再試。")
 else:
     st.write("進出站人數資料:")
-    for row in data:
-        st.write(row)
+    # 根據data型態選擇適合的顯示元件
+    if hasattr(data, "columns") and hasattr(data, "index"):
+        st.dataframe(data)
+    elif isinstance(data, (list, dict)):
+        st.table(data)
+    else:
+        st.write(data)
