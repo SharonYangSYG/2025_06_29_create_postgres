@@ -101,14 +101,14 @@ def get_station_data_by_date(station_name, start_date, end_date):
         cursor = conn.cursor()
         query = """
         SELECT p."日期",
-               t."stationName" AS 車站,
+               t."stationname" AS 車站,
                p."進站人數",
                p."出站人數"
         FROM public."每日各站進出站人數" p
         JOIN public."台鐵車站資訊" t
-          ON p."車站代碼" = t."stationCode"
+          ON p."車站代碼" = t."stationcode"
         WHERE p."日期" BETWEEN %s AND %s
-          AND t."stationName" = %s
+          AND t."stationname" = %s
         ORDER BY p."日期";
         """
         # 使用參數化查詢避免 SQL 注入，並使用提供的函式參數
