@@ -1,0 +1,5 @@
+.env
+__pycache__
+
+##忽略不用上傳
+##pycache是暫存檔案
